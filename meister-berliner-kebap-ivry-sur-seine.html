@@ -1,0 +1,825 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meister Berliner Kebap à Ivry-sur-Seine - Kebap authentique, grillades et spécialités turques. Découvrez nos menus savoureux et délicieux.">
+    <meta name="keywords" content="kebap, kebab, ivry-sur-seine, berliner, restaurant turc, livraison">
+    <meta name="author" content="Meister Berliner Kebap">
+    <title>Meister Berliner Kebap - Ivry-sur-Seine | Kebap Authentique</title>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Restaurant",
+        "name": "Meister Berliner Kebap",
+        "image": "https://via.placeholder.com/800x400?text=Meister+Berliner+Kebap",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "86 Bd Paul Vaillant Couturier",
+            "addressLocality": "Ivry-sur-Seine",
+            "postalCode": "94200",
+            "addressCountry": "FR"
+        },
+        "telephone": "+33773435405",
+        "servesCuisine": "Turkish",
+        "priceRange": "€€",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "@type": "AggregateRating",
+            "ratingValue": "4.6",
+            "reviewCount": "128"
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "11:00",
+            "closes": "23:00"
+        }
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #DC143C;
+            --secondary: #1a1a1a;
+            --accent: #FFD700;
+            --light-bg: #f8f8f8;
+            --text-dark: #2c2c2c;
+            --text-light: #666666;
+            --border: #e0e0e0;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        /* HEADER */
+        header {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .header-contact {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+
+        .phone-link {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .phone-link:hover {
+            color: var(--primary);
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #b00d2e 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--secondary);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 215, 0, 0.4);
+            background-color: #ffc700;
+        }
+
+        /* INFOS SECTION */
+        .infos {
+            background-color: var(--light-bg);
+            padding: 3rem 2rem;
+        }
+
+        .infos-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .info-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .info-card p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .info-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .info-link:hover {
+            color: var(--secondary);
+        }
+
+        /* MENU SECTION */
+        .menu {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+
+        .menu-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .menu-category {
+            background-color: var(--light-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .menu-category h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .menu-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .menu-item-name {
+            font-weight: 600;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item-price {
+            color: var(--primary);
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .menu-item-description {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            background: linear-gradient(135deg, var(--secondary) 0%, #2a2a2a 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+        }
+
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .about h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
+            margin: 1.5rem auto 0;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .about-highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* CONTACT SECTION */
+        .contact {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .contact-info h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-detail strong {
+            color: var(--primary);
+            min-width: 80px;
+        }
+
+        .contact-detail a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-detail a:hover {
+            color: var(--primary);
+        }
+
+        .contact-form {
+            background-color: var(--light-bg);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .contact-form h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .form-group button:hover {
+            background-color: #b00d2e;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--secondary);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .header-contact {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .menu-item-name {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .menu-item-price {
+                align-self: flex-start;
+            }
+
+            .about h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 2rem;
+                font-size: 0.95rem;
+            }
+
+            .menu-categories {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .infos-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Meister <span>Berliner</span></div>
+            <div class="header-contact">
+                <a href="tel:+33773435405" class="phone-link">📞 +33 7 73 43 54 05</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Meister Berliner Kebap</h1>
+            <p>Kebap authentique et délicieux à Ivry-sur-Seine</p>
+            <p style="font-size: 1rem; opacity: 0.9;">Saveurs turques et grillades artisanales</p>
+            <a href="#contact" class="cta-button">Nous Contacter</a>
+        </div>
+    </section>
+
+    <!-- INFOS -->
+    <section class="infos">
+        <div class="infos-container">
+            <div class="info-card">
+                <div class="info-icon">📍</div>
+                <h3>Localisation</h3>
+                <p>86 Bd Paul Vaillant Couturier</p>
+                <p>94200 Ivry-sur-Seine</p>
+                <a href="https://www.google.com/maps/search/Meister+Berliner+Kebap+Ivry+sur+Seine" target="_blank" class="info-link">Voir sur Google Maps</a>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">📞</div>
+                <h3>Téléphone</h3>
+                <p>Nous sommes à votre écoute</p>
+                <a href="tel:+33773435405" class="info-link">+33 7 73 43 54 05</a>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">🕐</div>
+                <h3>Horaires</h3>
+                <p>Tous les jours de 11h à 23h</p>
+                <p style="font-size: 0.9rem; opacity: 0.8;">Dimanche: 12h à 22h</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="menu">
+        <h2 class="section-title">Notre Menu</h2>
+        <div class="menu-categories">
+            <!-- Catégorie 1: Entrées -->
+            <div class="menu-category">
+                <h3>🥘 Entrées & Mezze</h3>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Houmous</span>
+                        <span class="menu-item-price">5,50 €</span>
+                    </div>
+                    <div class="menu-item-description">Pois chiches écrasés à la purée de sésame</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Baba Ganoush</span>
+                        <span class="menu-item-price">6,00 €</span>
+                    </div>
+                    <div class="menu-item-description">Aubergines grillées et crème de sésame</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Salade Grecque</span>
+                        <span class="menu-item-price">7,00 €</span>
+                    </div>
+                    <div class="menu-item-description">Tomates, concombre, feta et olives noires</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Börek (3 pièces)</span>
+                        <span class="menu-item-price">8,50 €</span>
+                    </div>
+                    <div class="menu-item-description">Feuilleté croustillant au fromage ou viande</div>
+                </div>
+            </div>
+
+            <!-- Catégorie 2: Kebaps -->
+            <div class="menu-category">
+                <h3>🍖 Kebaps & Grillades</h3>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Kebap Poulet</span>
+                        <span class="menu-item-price">9,50 €</span>
+                    </div>
+                    <div class="menu-item-description">Poulet rôti mariné, salade et sauce</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Kebap Viande</span>
+                        <span class="menu-item-price">10,50 €</span>
+                    </div>
+                    <div class="menu-item-description">Agneau et boeuf, saveurs authentiques</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Kebap Mixte</span>
+                        <span class="menu-item-price">11,50 €</span>
+                    </div>
+                    <div class="menu-item-description">Poulet et viande rouge, le meilleur des deux</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Adana Kebap</span>
+                        <span class="menu-item-price">12,00 €</span>
+                    </div>
+                    <div class="menu-item-description">Viande hachée épicée grillée à la main</div>
+                </div>
+            </div>
+
+            <!-- Catégorie 3: Sandwichs & Wraps -->
+            <div class="menu-category">
+                <h3>🌯 Sandwichs & Wraps</h3>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Dürüm Poulet</span>
+                        <span class="menu-item-price">8,00 €</span>
+                    </div>
+                    <div class="menu-item-description">Galette croustillante, poulet, légumes frais</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Dürüm Viande</span>
+                        <span class="menu-item-price">9,00 €</span>
+                    </div>
+                    <div class="menu-item-description">Galette garnie de viande rouge grillée</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Pain Pide Fromage</span>
+                        <span class="menu-item-price">7,50 €</span>
+                    </div>
+                    <div class="menu-item-description">Pain turc traditionnel garni de fromage fondant</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Pain Pide Viande</span>
+                        <span class="menu-item-price">8,50 €</span>
+                    </div>
+                    <div class="menu-item-description">Pain délicieux avec viande hachée épicée</div>
+                </div>
+            </div>
+
+            <!-- Catégorie 4: Accompagnements -->
+            <div class="menu-category">
+                <h3>🥗 Accompagnements</h3>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Frites</span>
+                        <span class="menu-item-price">3,50 €</span>
+                    </div>
+                    <div class="menu-item-description">Frites croustillantes et dorées</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Riz Pilaf</span>
+                        <span class="menu-item-price">4,00 €</span>
+                    </div>
+                    <div class="menu-item-description">Riz long grain cuit à la perfection</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Salade Fraîche</span>
+                        <span class="menu-item-price">4,50 €</span>
+                    </div>
+                    <div class="menu-item-description">Laitue, tomate, concombre, oignon</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Sauce Maison (pot)</span>
+                        <span class="menu-item-price">2,00 €</span>
+                    </div>
+                    <div class="menu-item-description">Yaourt épicé savoureux et authentique</div>
+                </div>
+            </div>
+
+            <!-- Catégorie 5: Boissons -->
+            <div class="menu-category">
+                <h3>🥤 Boissons</h3>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Eau (33cl)</span>
+                        <span class="menu-item-price">1,50 €</span>
+                    </div>
+                    <div class="menu-item-description">Eau plate ou pétillante</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Soda (33cl)</span>
+                        <span class="menu-item-price">2,50 €</span>
+                    </div>
+                    <div class="menu-item-description">Coca, Fanta, Sprite et plus</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Ayran</span>
+                        <span class="menu-item-price">3,00 €</span>
+                    </div>
+                    <div class="menu-item-description">Boisson turque traditionnelle au yaourt</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Jus Frais</span>
+                        <span class="menu-item-price">4,00 €</span>
+                    </div>
+                    <div class="menu-item-description">Orange, citron ou pomme frais pressé</div>
+                </div>
+            </div>
+
+            <!-- Catégorie 6: Desserts -->
+            <div class="menu-category">
+                <h3>🍰 Desserts</h3>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Baklava</span>
+                        <span class="menu-item-price">6,50 €</span>
+                    </div>
+                    <div class="menu-item-description">Feuilleté aux pistaches et miel sucré</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Kunafa</span>
+                        <span class="menu-item-price">6,00 €</span>
+                    </div>
+                    <div class="menu-item-description">Crème et pistaches caramélisées</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Pâtisseries Turques</span>
+                        <span class="menu-item-price">5,00 €</span>
+                    </div>
+                    <div class="menu-item-description">Sélection de délices sucrés traditionnels</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-name">
+                        <span>Halva</span>
+                        <span class="menu-item-price">4,50 €</span>
+                    </div>
+                    <div class="menu-item-description">Pâte sésame sucrée, texture fondante</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about">
+        <div class="about-container">
+            <h2>À Propos de Nous</h2>
+            <p>
+                Bienvenue chez <span class="about-highlight">Meister Berliner Kebap</span>, votre restaurant de cuisine turque authentique à Ivry-sur-Seine depuis plusieurs années.
+            </p>
+            <p>
+                Nous nous engageons à vous servir les meilleures saveurs turques avec des <span class="about-highlight">ingrédients frais et de qualité</span>. Nos kebaps sont marinés et grillés avec passion, suivant les traditions culinaires d'Anatolie.
+            </p>
+            <p>
+                Que vous cherchiez un kebap savoureux pour le déjeuner, un dîner en famille ou une livraison à domicile, notre équipe dynamique est là pour vous offrir une <span class="about-highlight">expérience culinaire inoubliable</span>.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Nous Contacter</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Coordonnées</h3>
+                <div class="contact-detail">
+                    <strong>Adresse:</strong>
+                    <div>
+                        86 Bd Paul Vaillant Couturier<br>
+                        94200 Ivry-sur-Seine, France
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <strong>Téléphone:</strong>
+                    <div>
+                        <a href="tel:+33773435405">+33 7 73 43 54 05</a>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <strong>Horaires:</strong>
+                    <div>
+                        Lun-Sam: 11h - 23h<br>
+                        Dimanche: 12h - 22h
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <strong>Services:</strong>
+                    <div>
+                        Sur place • À emporter • Livraison
+                    </div>
+                </div>
+                <div style="margin-top: 
