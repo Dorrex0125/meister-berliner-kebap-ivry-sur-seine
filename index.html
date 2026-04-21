@@ -1,824 +1,863 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Meister Berliner Kebap à Ivry-sur-Seine - Kebap authentique, grillades et spécialités turques. Découvrez nos menus savoureux et délicieux.">
-    <meta name="keywords" content="kebap, kebab, ivry-sur-seine, berliner, restaurant turc, livraison">
-    <meta name="author" content="Meister Berliner Kebap">
-    <title>Meister Berliner Kebap - Ivry-sur-Seine | Kebap Authentique</title>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org/",
-        "@type": "Restaurant",
-        "name": "Meister Berliner Kebap",
-        "image": "https://via.placeholder.com/800x400?text=Meister+Berliner+Kebap",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "86 Bd Paul Vaillant Couturier",
-            "addressLocality": "Ivry-sur-Seine",
-            "postalCode": "94200",
-            "addressCountry": "FR"
-        },
-        "telephone": "+33773435405",
-        "servesCuisine": "Turkish",
-        "priceRange": "€€",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "@type": "AggregateRating",
-            "ratingValue": "4.6",
-            "reviewCount": "128"
-        },
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-            "opens": "11:00",
-            "closes": "23:00"
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meister Berliner Kebap — Kebap Authentique · Ivry-sur-Seine</title>
+  <meta name="description" content="Meister Berliner Kebap - Kebap authentique, grillades et spécialités turques à Ivry-sur-Seine. 86 Bd Paul Vaillant Couturier, 94200.">
+  <meta name="theme-color" content="#DC143C">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">{"@context":"https://schema.org/","@type":"Restaurant","name":"Meister Berliner Kebap","address":{"@type":"PostalAddress","streetAddress":"86 Bd Paul Vaillant Couturier","addressLocality":"Ivry-sur-Seine","postalCode":"94200","addressCountry":"FR"},"telephone":"+33773435405","servesCuisine":"Turkish","priceRange":"€€","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.6","reviewCount":"128"}}</script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --red: #DC143C;
+      --red-dark: #a50e2c;
+      --red-glow: rgba(220,20,60,0.15);
+      --gold: #FFD700;
+      --gold-dim: rgba(255,215,0,0.15);
+      --dark: #111111;
+      --dark-2: #1a1a1a;
+      --dark-3: #222222;
+      --off-white: #FAF7F2;
+      --warm-white: #FFF9F0;
+      --white: #FFFFFF;
+      --muted-dark: rgba(255,255,255,0.5);
+      --muted-light: rgba(17,17,17,0.5);
+      --border-dark: rgba(255,255,255,0.08);
+      --border-light: rgba(17,17,17,0.08);
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
     }
-    </script>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #DC143C;
-            --secondary: #1a1a1a;
-            --accent: #FFD700;
-            --light-bg: #f8f8f8;
-            --text-dark: #2c2c2c;
-            --text-light: #666666;
-            --border: #e0e0e0;
-            --white: #ffffff;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--white);
-        }
-
-        /* HEADER */
-        header {
-            background-color: var(--secondary);
-            color: var(--white);
-            padding: 1.5rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .logo span {
-            color: var(--primary);
-        }
-
-        .header-contact {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            font-size: 0.95rem;
-        }
-
-        .phone-link {
-            color: var(--white);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .phone-link:hover {
-            color: var(--primary);
-        }
-
-        /* HERO */
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #b00d2e 100%);
-            color: var(--white);
-            padding: 5rem 2rem;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3.2rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--accent);
-            color: var(--secondary);
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(255, 215, 0, 0.4);
-            background-color: #ffc700;
-        }
-
-        /* INFOS SECTION */
-        .infos {
-            background-color: var(--light-bg);
-            padding: 3rem 2rem;
-        }
-
-        .infos-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .info-card {
-            background-color: var(--white);
-            padding: 2rem;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .info-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-        }
-
-        .info-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .info-card h3 {
-            color: var(--primary);
-            margin-bottom: 0.8rem;
-            font-size: 1.3rem;
-        }
-
-        .info-card p {
-            color: var(--text-light);
-            margin-bottom: 1rem;
-        }
-
-        .info-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .info-link:hover {
-            color: var(--secondary);
-        }
-
-        /* MENU SECTION */
-        .menu {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 3rem;
-            position: relative;
-            padding-bottom: 1.5rem;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background-color: var(--primary);
-            border-radius: 2px;
-        }
-
-        .menu-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
-
-        .menu-category {
-            background-color: var(--light-bg);
-            padding: 2rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--primary);
-        }
-
-        .menu-category h3 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .menu-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .menu-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .menu-item-name {
-            font-weight: 600;
-            color: var(--text-dark);
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .menu-item-price {
-            color: var(--primary);
-            font-weight: 700;
-            white-space: nowrap;
-        }
-
-        .menu-item-description {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            line-height: 1.5;
-        }
-
-        /* ABOUT SECTION */
-        .about {
-            background: linear-gradient(135deg, var(--secondary) 0%, #2a2a2a 100%);
-            color: var(--white);
-            padding: 4rem 2rem;
-        }
-
-        .about-container {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .about h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--primary);
-            border-radius: 2px;
-            margin: 1.5rem auto 0;
-        }
-
-        .about p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
-        }
-
-        .about-highlight {
-            color: var(--accent);
-            font-weight: 600;
-        }
-
-        /* CONTACT SECTION */
-        .contact {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .contact-info h3 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-detail {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-detail strong {
-            color: var(--primary);
-            min-width: 80px;
-        }
-
-        .contact-detail a {
-            color: var(--text-dark);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-detail a:hover {
-            color: var(--primary);
-        }
-
-        .contact-form {
-            background-color: var(--light-bg);
-            padding: 2rem;
-            border-radius: 8px;
-        }
-
-        .contact-form h3 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid var(--border);
-            border-radius: 4px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-group button {
-            width: 100%;
-            padding: 1rem;
-            background-color: var(--primary);
-            color: var(--white);
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .form-group button:hover {
-            background-color: #b00d2e;
-            transform: translateY(-2px);
-        }
-
-        /* FOOTER */
-        footer {
-            background-color: var(--secondary);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-            font-size: 0.9rem;
-        }
-
-        footer p {
-            opacity: 0.8;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .header-contact {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .menu-item-name {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .menu-item-price {
-                align-self: flex-start;
-            }
-
-            .about h2 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero {
-                padding: 3rem 1rem;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .cta-button {
-                padding: 0.8rem 2rem;
-                font-size: 0.95rem;
-            }
-
-            .menu-categories {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .infos-container {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--off-white);
+      color: var(--dark);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; transition: color 0.25s; }
+
+    /* ─── CURSOR ─── */
+    .cursor {
+      width: 10px; height: 10px;
+      background: var(--red); border-radius: 50%;
+      position: fixed; top: 0; left: 0;
+      pointer-events: none; z-index: 9999;
+      transform: translate(-50%,-50%);
+      transition: width 0.2s, height 0.2s, opacity 0.2s;
+    }
+    .cursor.grow { width: 30px; height: 30px; opacity: 0.35; }
+
+    /* ─── HEADER ─── */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    }
+    .header-bar {
+      padding: 1rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(17,17,17,0.82);
+      backdrop-filter: blur(18px) saturate(160%);
+      -webkit-backdrop-filter: blur(18px) saturate(160%);
+      border-bottom: 1px solid var(--border-dark);
+      transition: background 0.4s;
+    }
+    header.scrolled .header-bar { background: rgba(10,10,10,0.97); }
+
+    .logo { display: flex; align-items: center; gap: 0.8rem; }
+    .logo-mark {
+      width: 40px; height: 40px;
+      background: var(--red); border-radius: 8px;
+      display: grid; place-items: center;
+      font-family: var(--font-display);
+      font-size: 1rem; font-weight: 900;
+      color: white; flex-shrink: 0;
+      box-shadow: 0 0 16px rgba(220,20,60,0.4);
+    }
+    .logo-name {
+      font-family: var(--font-display);
+      font-size: 1.3rem; font-weight: 800;
+      color: var(--white); line-height: 1.1;
+    }
+    .logo-name em { color: var(--red); font-style: normal; display: block; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; font-family: var(--font-body); font-weight: 600; }
+
+    .header-right { display: flex; align-items: center; gap: 2rem; }
+    nav { display: flex; gap: 0.3rem; }
+    nav a {
+      padding: 0.5rem 1rem; border-radius: 6px;
+      font-size: 0.95rem; font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      transition: all 0.2s;
+    }
+    nav a:hover { color: white; background: rgba(255,255,255,0.07); }
+
+    .header-phone {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.9rem; font-weight: 700;
+      color: var(--gold);
+      border: 1px solid rgba(255,215,0,0.25);
+      border-radius: 6px; padding: 0.45rem 1rem;
+      transition: all 0.25s;
+    }
+    .header-phone:hover { background: var(--gold-dim); border-color: rgba(255,215,0,0.5); }
+
+    .nav-toggle {
+      display: none; background: none; border: none; cursor: pointer;
+      padding: 0; flex-shrink: 0;
+      width: 36px; height: 36px;
+      position: relative;
+    }
+    .nav-toggle span {
+      display: block; width: 22px; height: 1.5px;
+      background: white; border-radius: 2px;
+      position: absolute; left: 7px;
+      transition: transform 0.3s ease, opacity 0.3s ease, top 0.3s ease;
+    }
+    .nav-toggle span:nth-child(1) { top: 10px; }
+    .nav-toggle span:nth-child(2) { top: 17px; }
+    .nav-toggle span:nth-child(3) { top: 24px; }
+    .nav-toggle.open span:nth-child(1) { top: 17px; transform: rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-toggle.open span:nth-child(3) { top: 17px; transform: rotate(-45deg); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      background: var(--dark);
+    }
+
+    /* Warm gradient sweep */
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 80% at 70% 50%, rgba(220,20,60,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 10% 80%, rgba(255,215,0,0.06) 0%, transparent 60%);
+    }
+
+    /* Diagonal stripe texture */
+    .hero-stripes {
+      position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(
+        -55deg,
+        transparent, transparent 40px,
+        rgba(255,255,255,0.013) 40px, rgba(255,255,255,0.013) 42px
+      );
+    }
+
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 9rem 3rem 5rem;
+      position: relative; z-index: 2;
+      width: 100%;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+    }
+
+    .hero-left {}
+    .hero-rating {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--gold-dim); border: 1px solid rgba(255,215,0,0.25);
+      border-radius: 50px; padding: 0.4rem 1rem;
+      font-size: 0.78rem; font-weight: 700;
+      color: var(--gold); margin-bottom: 1.5rem;
+      opacity: 0; animation: fadeUp 0.7s 0.1s forwards;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1;
+      color: white;
+      margin-bottom: 1.5rem;
+      opacity: 0; animation: fadeUp 0.7s 0.25s forwards;
+    }
+    .hero h1 .red { color: var(--red); }
+    .hero h1 .ghost {
+      -webkit-text-stroke: 1.5px rgba(255,255,255,0.2);
+      color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 420px; line-height: 1.8;
+      margin-bottom: 2.5rem;
+      opacity: 0; animation: fadeUp 0.7s 0.4s forwards;
+    }
+    .hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      opacity: 0; animation: fadeUp 0.7s 0.55s forwards;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 2rem; border-radius: 6px;
+      font-family: var(--font-body);
+      font-size: 0.88rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.8px;
+      border: none; cursor: pointer; transition: all 0.25s;
+    }
+    .btn-gold { background: var(--gold); color: var(--dark); box-shadow: 0 4px 20px rgba(255,215,0,0.35); }
+    .btn-gold:hover { background: #ffc700; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255,215,0,0.45); }
+    .btn-ghost-white { background: transparent; color: white; border: 1.5px solid rgba(255,255,255,0.25); }
+    .btn-ghost-white:hover { border-color: white; transform: translateY(-2px); }
+    .btn-red { background: var(--red); color: white; box-shadow: 0 4px 20px rgba(220,20,60,0.4); }
+    .btn-red:hover { background: var(--red-dark); transform: translateY(-2px); }
+
+    /* Hero right */
+    .hero-right {
+      display: flex; flex-direction: column; gap: 1rem;
+      opacity: 0; animation: fadeRight 0.8s 0.65s forwards;
+    }
+    .hero-open {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 50px; padding: 0.5rem 1.1rem;
+      font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.75);
+      align-self: flex-start;
+    }
+    .open-dot { width: 7px; height: 7px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 8px #4ade80; animation: pulse 2s infinite; }
+
+    .hero-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 14px; padding: 1.5rem;
+      backdrop-filter: blur(10px);
+      transition: border-color 0.25s;
+    }
+    .hero-card:hover { border-color: rgba(220,20,60,0.3); }
+    .hero-card-ico { font-size: 1.7rem; margin-bottom: 0.6rem; }
+    .hero-card h3 { font-family: var(--font-display); font-size: 1.1rem; color: white; margin-bottom: 0.3rem; }
+    .hero-card p { font-size: 0.83rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+    /* ─── TICKER ─── */
+    .ticker { overflow: hidden; background: var(--red); padding: 0.75rem 0; }
+    .ticker-track { display: flex; width: max-content; animation: ticker 26s linear infinite; }
+    .ticker-item {
+      font-family: var(--font-body); font-size: 0.85rem; font-weight: 800;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: white; padding: 0 2.5rem; white-space: nowrap;
+    }
+    .ticker-item::after { content: '✦'; margin-left: 2.5rem; opacity: 0.45; }
+
+    /* ─── SECTION BASE ─── */
+    .section { padding: 6rem 3rem; position: relative; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 3px;
+      color: var(--red); margin-bottom: 0.75rem;
+    }
+    .eyebrow::before { content: ''; display: block; width: 20px; height: 1.5px; background: var(--red); }
+    .eyebrow.gold { color: var(--gold); }
+    .eyebrow.gold::before { background: var(--gold); }
+
+    .s-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 4.5vw, 3.8rem);
+      line-height: 1; color: var(--dark); margin-bottom: 0.8rem;
+    }
+    .s-title em { color: var(--red); font-style: normal; }
+    .s-title.light { color: white; }
+    .s-title.light em { color: var(--gold); }
+    .s-desc { font-size: 1rem; color: var(--muted-light); max-width: 480px; line-height: 1.75; }
+    .s-desc.light { color: var(--muted-dark); }
+
+    /* ─── INFOS ─── */
+    .infos-section { background: var(--white); }
+    .info-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
+    .info-card {
+      background: var(--off-white); border: 1px solid var(--border-light);
+      border-radius: 16px; padding: 2.2rem; position: relative; overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    .info-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
+    }
+    .info-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(220,20,60,0.08); border-color: rgba(220,20,60,0.15); }
+    .info-card:hover::before { transform: scaleX(1); }
+    .info-ico { width: 52px; height: 52px; background: rgba(220,20,60,0.08); border-radius: 12px; display: grid; place-items: center; font-size: 1.4rem; margin-bottom: 1.2rem; }
+    .info-card h3 { font-family: var(--font-display); font-size: 1.2rem; color: var(--dark); margin-bottom: 0.5rem; }
+    .info-card p { font-size: 0.9rem; color: var(--muted-light); line-height: 1.7; }
+    .info-card a { color: var(--red); font-weight: 600; }
+    .info-card a:hover { color: var(--red-dark); }
+
+    /* ─── MENU ─── */
+    .menu-section { background: var(--off-white); }
+    .menu-top { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 2rem; margin-bottom: 3rem; }
+    .menu-cats { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .menu-cat {
+      padding: 0.5rem 1.2rem; border-radius: 50px;
+      border: 1.5px solid rgba(17,17,17,0.12);
+      background: transparent; color: var(--muted-light);
+      font-family: var(--font-body); font-size: 0.78rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px;
+      cursor: pointer; transition: all 0.25s;
+    }
+    .menu-cat:hover, .menu-cat.active { border-color: var(--red); color: white; background: var(--red); }
+
+    .menu-category { margin-bottom: 3rem; }
+    .menu-cat-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .menu-cat-title { font-family: var(--font-display); font-size: 1.6rem; color: var(--dark); white-space: nowrap; }
+    .menu-cat-rule { flex: 1; height: 1px; background: linear-gradient(to right, rgba(220,20,60,0.3), transparent); }
+
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 0.75rem; }
+    .menu-item {
+      background: var(--white); border: 1px solid var(--border-light);
+      border-radius: 10px; padding: 1.2rem 1.5rem;
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;
+      transition: all 0.25s; position: relative; overflow: hidden;
+    }
+    .menu-item::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+      background: var(--red); transform: scaleY(0); transform-origin: bottom; transition: transform 0.3s;
+    }
+    .menu-item:hover { border-color: rgba(220,20,60,0.2); transform: translateX(4px); box-shadow: 0 4px 16px rgba(220,20,60,0.06); }
+    .menu-item:hover::before { transform: scaleY(1); }
+    .menu-item-info h4 { font-weight: 700; font-size: 0.95rem; color: var(--dark); margin-bottom: 0.3rem; }
+    .menu-item-info p { font-size: 0.82rem; color: var(--muted-light); line-height: 1.5; }
+    .menu-price { font-family: var(--font-display); font-size: 1.25rem; color: var(--red); white-space: nowrap; flex-shrink: 0; }
+    .mbadge {
+      display: inline-block; padding: 0.1rem 0.45rem;
+      background: var(--gold-dim); border: 1px solid rgba(255,215,0,0.35);
+      border-radius: 4px; font-size: 0.68rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px; color: #997800;
+      margin-left: 0.35rem; vertical-align: middle;
+    }
+
+    /* ─── ABOUT ─── */
+    .about-section { background: var(--dark); overflow: hidden; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .about-text p { color: rgba(255,255,255,0.6); line-height: 1.85; font-size: 0.97rem; margin-top: 1rem; }
+    .about-highlight { color: var(--gold); font-weight: 700; }
+    .about-feats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 2rem; }
+    .about-feat {
+      display: flex; align-items: center; gap: 0.7rem;
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px; padding: 0.8rem 1rem;
+      font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.8);
+      transition: border-color 0.25s;
+    }
+    .about-feat:hover { border-color: rgba(220,20,60,0.3); }
+
+    .about-visual { position: relative; }
+    .about-ghost {
+      font-family: var(--font-display);
+      font-size: clamp(7rem, 14vw, 12rem);
+      color: transparent; -webkit-text-stroke: 1.5px rgba(220,20,60,0.15);
+      position: absolute; top: -2rem; right: -1rem;
+      pointer-events: none; user-select: none; line-height: 1;
+    }
+    .stat-cards { display: flex; flex-direction: column; gap: 1rem; position: relative; }
+    .stat-card {
+      background: var(--dark-2); border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px; padding: 1.7rem 2rem;
+      display: flex; align-items: center; gap: 1.5rem;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+    .stat-card:hover { transform: translateX(-4px); border-color: rgba(220,20,60,0.25); }
+    .stat-num { font-family: var(--font-display); font-size: 2.8rem; color: var(--red); line-height: 1; flex-shrink: 0; }
+    .stat-info h4 { font-weight: 700; font-size: 0.95rem; color: white; margin-bottom: 0.2rem; }
+    .stat-info p { font-size: 0.82rem; color: rgba(255,255,255,0.45); }
+
+    /* ─── CONTACT ─── */
+    .contact-section { background: var(--white); }
+    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .contact-items { display: flex; flex-direction: column; gap: 1rem; margin-top: 2.5rem; }
+    .contact-item {
+      display: flex; align-items: flex-start; gap: 1.2rem;
+      padding: 1.4rem; background: var(--off-white);
+      border: 1px solid var(--border-light); border-radius: 12px;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .contact-item:hover { border-color: rgba(220,20,60,0.2); transform: translateX(4px); }
+    .contact-ico { width: 44px; height: 44px; background: rgba(220,20,60,0.08); border-radius: 10px; display: grid; place-items: center; font-size: 1.2rem; flex-shrink: 0; }
+    .contact-info h4 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--red); margin-bottom: 0.3rem; }
+    .contact-info p, .contact-info a { font-size: 0.95rem; color: var(--dark); line-height: 1.5; }
+    .contact-info a { color: var(--red); font-weight: 600; }
+    .contact-info a:hover { color: var(--red-dark); }
+
+    .contact-map {
+      border-radius: 16px; overflow: hidden;
+      border: 1px solid var(--border-light);
+      height: 320px; position: relative;
+      margin-top: 2.5rem;
+    }
+    .contact-map iframe { width: 100%; height: 100%; border: none; filter: grayscale(0.3) contrast(1.05); }
+    .contact-map-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 60%, rgba(250,247,242,0.5)); pointer-events: none; }
+    .contact-cta { margin-top: 2rem; }
+
+    /* ─── DIVIDER ─── */
+    .divider { height: 1px; background: linear-gradient(to right, transparent, rgba(220,20,60,0.3), transparent); margin: 0 3rem; }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,0.05); padding: 2.5rem 3rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-brand { font-family: var(--font-display); font-size: 1.4rem; color: white; }
+    .footer-brand em { color: var(--red); font-style: normal; }
+    .footer-info { font-size: 0.82rem; color: rgba(255,255,255,0.3); }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s, transform 0.7s; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:none; } }
+    @keyframes fadeRight { from { opacity:0; transform:translateX(24px); } to { opacity:1; transform:none; } }
+    @keyframes ticker { 0% { transform:translateX(0); } 100% { transform:translateX(-50%); } }
+    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.35; } }
+
+    /* ─── RESPONSIVE ─── */
+
+    /* Tablet: hide phone button, show hamburger, keep nav links */
+    @media (max-width: 1000px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .info-cards { grid-template-columns: 1fr 1fr; }
+      .about-grid, .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-ghost { display: none; }
+      .about-feats { grid-template-columns: 1fr 1fr; }
+      .header-phone { display: none; }
+    }
+
+    /* Small tablet: collapse nav into hamburger */
+    @media (max-width: 780px) {
+      .info-cards { grid-template-columns: 1fr; }
+      .nav-toggle { display: flex; align-items: center; justify-content: center; }
+
+      /* Slide-down mobile nav */
+      nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: rgba(10,10,10,0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-top: 1px solid var(--border-dark);
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+        pointer-events: none;
+      }
+      nav.open {
+        max-height: 320px;
+        padding: 1rem;
+        pointer-events: auto;
+      }
+      nav a {
+        padding: 0.85rem 1rem;
+        font-size: 1rem;
+        color: rgba(255,255,255,0.75);
+        border-radius: 8px;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        text-align: left;
+      }
+      nav a:last-child { border-bottom: none; }
+      nav a:hover { color: white; background: rgba(255,255,255,0.06); }
+
+      /* Shrink logo text on smaller screens */
+      .logo-name { font-size: 1.1rem; }
+      .logo-name em { font-size: 0.62rem; letter-spacing: 2px; }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .section { padding: 4rem 1.25rem; }
+      .header-bar { padding: 0.85rem 1.25rem; }
+      footer { padding: 2rem 1.25rem; }
+      .divider { margin: 0 1.25rem; }
+      .menu-grid { grid-template-columns: 1fr; }
+      .about-feats { grid-template-columns: 1fr; }
+      .hero-inner { padding: 7.5rem 1.25rem 3.5rem; }
+      .hero h1 { font-size: clamp(2.4rem, 10vw, 3.2rem); }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+
+      /* On mobile show phone number inside open nav instead */
+      nav.open::after {
+        content: '📞 07 73 43 54 05';
+        display: block;
+        padding: 0.85rem 1rem;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--gold);
+        border-top: 1px solid rgba(255,255,255,0.08);
+        margin-top: 0.25rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="header-container">
-            <div class="logo">Meister <span>Berliner</span></div>
-            <div class="header-contact">
-                <a href="tel:+33773435405" class="phone-link">📞 +33 7 73 43 54 05</a>
-            </div>
+<div class="cursor" id="cursor"></div>
+
+<!-- HEADER -->
+<header id="site-header">
+  <div class="header-bar">
+    <a href="#" class="logo" aria-label="Meister Berliner Kebap">
+      <div class="logo-mark">MB</div>
+      <div class="logo-name">
+        Meister Berliner
+        <em>Kebap · Ivry-sur-Seine</em>
+      </div>
+    </a>
+    <div class="header-right">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav">
+        <a href="#infos">Infos</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">À propos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="tel:+33773435405" class="header-phone">📞 07 73 43 54 05</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-stripes"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-rating">⭐ 4,6 · 128 avis Google</div>
+      <h1>
+        MEISTER<br>
+        <span class="red">BERLINER</span><br>
+        <span class="ghost">KEBAP</span>
+      </h1>
+      <p class="hero-desc">Kebap authentique et grillades artisanales inspirées des traditions turques et anatoliennes — au cœur d'Ivry-sur-Seine.</p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn btn-gold">🍖 Voir le Menu</a>
+        <a href="https://maps.google.com/maps?q=86+Bd+Paul+Vaillant+Couturier,+94200+Ivry-sur-Seine,+France" target="_blank" rel="noopener" class="btn btn-ghost-white">📍 Nous trouver</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-open"><span class="open-dot"></span> Ouvert 7j/7 · 11h–23h (dim. 12h–22h)</div>
+      <div class="hero-card">
+        <div class="hero-card-ico">🔥</div>
+        <h3>Grillades Artisanales</h3>
+        <p>Viandes marinées et grillées selon les traditions d'Anatolie.</p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-ico">🌯</div>
+        <h3>Dürüm & Kebap</h3>
+        <p>Galettes croustillantes, mezze maison et sauces authentiques.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">KEBAP AUTHENTIQUE</span>
+    <span class="ticker-item">GRILLADES TURQUES</span>
+    <span class="ticker-item">MEZZE MAISON</span>
+    <span class="ticker-item">DÜRÜM & PIDE</span>
+    <span class="ticker-item">IVRY-SUR-SEINE</span>
+    <span class="ticker-item">KEBAP AUTHENTIQUE</span>
+    <span class="ticker-item">GRILLADES TURQUES</span>
+    <span class="ticker-item">MEZZE MAISON</span>
+    <span class="ticker-item">DÜRÜM & PIDE</span>
+    <span class="ticker-item">IVRY-SUR-SEINE</span>
+  </div>
+</div>
+
+<!-- INFOS -->
+<section class="section infos-section" id="infos">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="eyebrow">Pratique</div>
+      <h2 class="s-title">Nos <em>Infos</em></h2>
+      <p class="s-desc">Retrouvez-nous facilement à Ivry-sur-Seine</p>
+    </div>
+    <div class="info-cards">
+      <div class="info-card reveal reveal-delay-1">
+        <div class="info-ico">📍</div>
+        <h3>Adresse</h3>
+        <p>86 Bd Paul Vaillant Couturier<br>94200 Ivry-sur-Seine</p>
+        <p style="margin-top:0.6rem"><a href="https://maps.google.com/maps?q=86+Bd+Paul+Vaillant+Couturier,+94200+Ivry-sur-Seine,+France" target="_blank" rel="noopener">Voir sur Google Maps →</a></p>
+      </div>
+      <div class="info-card reveal reveal-delay-2">
+        <div class="info-ico">📞</div>
+        <h3>Téléphone</h3>
+        <p><a href="tel:+33773435405" style="font-size:1.05rem">+33 7 73 43 54 05</a></p>
+        <p style="margin-top:0.4rem;font-size:0.82rem;color:var(--muted-light)">Commandes & renseignements</p>
+      </div>
+      <div class="info-card reveal reveal-delay-3">
+        <div class="info-ico">🕐</div>
+        <h3>Horaires</h3>
+        <p>Lun – Sam : 11h00 – 23h00<br>Dimanche : 12h00 – 22h00</p>
+        <p style="margin-top:0.4rem;font-size:0.82rem;color:var(--muted-light)">Sur place · À emporter · Livraison</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MENU -->
+<section class="section menu-section" id="menu">
+  <div class="section-inner">
+    <div class="menu-top">
+      <div class="reveal">
+        <div class="eyebrow">Saveurs</div>
+        <h2 class="s-title">Notre <em>Menu</em></h2>
+        <p class="s-desc">Recettes authentiques, ingrédients frais, passion turque</p>
+      </div>
+      <div class="menu-cats reveal">
+        <button class="menu-cat active" data-cat="all">Tout</button>
+        <button class="menu-cat" data-cat="entrees">Entrées</button>
+        <button class="menu-cat" data-cat="kebaps">Kebaps</button>
+        <button class="menu-cat" data-cat="sandwichs">Sandwichs</button>
+        <button class="menu-cat" data-cat="accompagnements">Accompagnements</button>
+        <button class="menu-cat" data-cat="boissons">Boissons</button>
+        <button class="menu-cat" data-cat="desserts">Desserts</button>
+      </div>
+    </div>
+
+    <!-- ENTRÉES -->
+    <div class="menu-category reveal" data-section="entrees">
+      <div class="menu-cat-head"><h3 class="menu-cat-title">🥘 ENTRÉES & MEZZE</h3><div class="menu-cat-rule"></div></div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-item-info"><h4>Houmous</h4><p>Pois chiches écrasés à la purée de sésame</p></div><div class="menu-price">5,50€</div></div>
+        <div class="menu-item"><div class="menu-item-info"><h4>Baba Ganoush</h4><p>Aubergines grillées et crème de sésame</p></div><div class="menu-price">6,00€</div></div>
+        <div class="menu-item"><div class="menu-item-info"><h4>Salade Grecque</h4><p>Tomates, concombre, feta et olives noires</p></div><div class="menu-price">7,00€</div></div>
+        <div class="menu-item"><div class="menu-item-info"><h4>Börek (3 pièces) <span class="mbadge">⭐ Best</span></h4><p>Feuilleté croustillant au fromage ou viande</p></div><div class="menu-price">8,50€</div></div>
+      </div>
+    </div>
+
+    <!-- KEBAPS -->
+    <div class="menu-category reveal" data-section="kebaps">
+      <div class="menu-cat-head"><h3 class="menu-cat-title">🍖 KEBAPS & GRILLADES</h3><div class="menu-cat-rule"></div></div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-item-info"><h4>Kebap Poulet</h4><p>Poulet rôti mariné, salade et sauce maison</p></div><div class="menu-price">9,50€</div></div>
+        <div class="menu-item"><div class="menu-item-info"><h4>Kebap Viande</h4><p>Agneau et boeuf, saveurs authentiques</p></div><div class="menu-price">10,50€</div></div>
+        <div class="menu-item"><div class="menu-item-info"><h4>Kebap Mixte <span class="mbadge">🔥 Pop</span></h4><p>Poulet et viande rouge, le meilleur des deux</p></div><div class="menu-price">11,50€</div></div>
+        <div class="menu-item"><div class="menu-item-info"><h4>Adana Kebap <span class="mbadge">⭐ Best</span></h4><p>Viande hachée épicée grillée à la main</p></div><div class="menu-price">12,00€</div></div>
+      </div>
+    </div>
+
+    <!-- SANDWICHS -->
+    <div class="menu-category reveal" data-section="sandwichs">
+      <div class="menu-cat-head"><h3 class="menu-cat-title">🌯 SANDWICHS & WRAPS</h3><div class="menu-cat-rule"></div></div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-item-info"><h4>Dürüm Poulet</h4><p>Galette croustillante, poulet, légumes frais</p></div><div class="menu-price">8,00€</div></div>
+        <div class="menu-item"><div class="menu-item-info"><h4>Dürüm Viande</h4><p>Galette garnie de viande rouge grillée</p></div><div class="menu-price">9,00€</div></div>
+        <div class="menu-item"><div class="menu-item-info"><h4>Pain Pide Fromage</h4><p>Pain turc traditionnel garni de fromage fondant</p></div><div class="menu-price">7,50€</div></div>
+        <div class="menu-item"><div class="menu-item-info"><h4>Pain Pide Viande</h4><p>Pain délicieux avec viande hachée épicée</p></div><div class="menu-price">8,50€</div></div>
+      </div>
+    </div>
+
+    <!-- ACCOMPAGNEMENTS -->
+    <div class="menu-category reveal" data-section="accompagnements">
+      <div class="menu-cat-head"><h3 class="menu-cat-title">🥗 ACCOMPAGNEMENTS</h3><div class="menu-cat-rule"></div></div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-item-info"><h4>Frites</h4><p>Frites croustillantes et dorées</p></div><div class="menu-price">3,50€</div></div>
+        <div class="menu-item"><div class="menu-item-info"><h4>Riz Pilaf</h4><p>Riz long grain cuit à la perfection</p></div><div class="menu-price">4,00€</div></div>
+        <div class="menu-item"><div class="menu-item-info"><h4>Salade Fraîche</h4><p>Laitue, tomate, concombre, oignon</p></div><div class="menu-price">4,50€</div></div>
+        <div class="menu-item"><div class="menu-item-info"><h4>Sauce Maison (pot)</h4><p>Yaourt épicé savoureux et authentique</p></div><div class="menu-price">2,00€</div></div>
+      </div>
+    </div>
+
+    <!-- BOISSONS -->
+    <div class="menu-category reveal" data-section="boissons">
+      <div class="menu-cat-head"><h3 class="menu-cat-title">🥤 BOISSONS</h3><div class="menu-cat-rule"></div></div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-item-info"><h4>Eau 33cl</h4><p>Plate ou pétillante</p></div><div class="menu-price">1,50€</div></div>
+        <div class="menu-item"><div class="menu-item-info"><h4>Soda 33cl</h4><p>Coca, Fanta, Sprite et plus</p></div><div class="menu-price">2,50€</div></div>
+        <div class="menu-item"><div class="menu-item-info"><h4>Ayran <span class="mbadge">Traditionnel</span></h4><p>Boisson turque au yaourt, fraîche et savoureuse</p></div><div class="menu-price">3,00€</div></div>
+        <div class="menu-item"><div class="menu-item-info"><h4>Jus Frais</h4><p>Orange, citron ou pomme frais pressé</p></div><div class="menu-price">4,00€</div></div>
+      </div>
+    </div>
+
+    <!-- DESSERTS -->
+    <div class="menu-category reveal" data-section="desserts">
+      <div class="menu-cat-head"><h3 class="menu-cat-title">🍰 DESSERTS</h3><div class="menu-cat-rule"></div></div>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-item-info"><h4>Baklava <span class="mbadge">⭐ Best</span></h4><p>Feuilleté aux pistaches et miel sucré</p></div><div class="menu-price">6,50€</div></div>
+        <div class="menu-item"><div class="menu-item-info"><h4>Kunafa</h4><p>Crème et pistaches caramélisées</p></div><div class="menu-price">6,00€</div></div>
+        <div class="menu-item"><div class="menu-item-info"><h4>Pâtisseries Turques</h4><p>Sélection de délices sucrés traditionnels</p></div><div class="menu-price">5,00€</div></div>
+        <div class="menu-item"><div class="menu-item-info"><h4>Halva</h4><p>Pâte de sésame sucrée, texture fondante</p></div><div class="menu-price">4,50€</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section class="section about-section" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="eyebrow gold">Notre histoire</div>
+        <h2 class="s-title light">À <em>propos</em></h2>
+        <p>Bienvenue chez <span class="about-highlight">Meister Berliner Kebap</span>, votre adresse de cuisine turque authentique à Ivry-sur-Seine depuis plusieurs années.</p>
+        <p>Nous nous engageons à vous servir les meilleures saveurs turques avec des <span class="about-highlight">ingrédients frais et de qualité</span>. Nos kebaps sont marinés et grillés avec passion, selon les traditions culinaires d'Anatolie.</p>
+        <p>Sur place, à emporter ou en livraison — notre équipe est là pour vous offrir une <span class="about-highlight">expérience culinaire inoubliable</span>.</p>
+        <div class="about-feats">
+          <div class="about-feat">🔥 Grillades artisanales</div>
+          <div class="about-feat">🌿 Ingrédients frais</div>
+          <div class="about-feat">🚀 Livraison disponible</div>
+          <div class="about-feat">⭐ 4,6 sur Google</div>
         </div>
-    </header>
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Meister Berliner Kebap</h1>
-            <p>Kebap authentique et délicieux à Ivry-sur-Seine</p>
-            <p style="font-size: 1rem; opacity: 0.9;">Saveurs turques et grillades artisanales</p>
-            <a href="#contact" class="cta-button">Nous Contacter</a>
+      </div>
+      <div class="about-visual reveal reveal-delay-1">
+        <div class="about-ghost">94</div>
+        <div class="stat-cards">
+          <div class="stat-card">
+            <div class="stat-num">4,6★</div>
+            <div class="stat-info"><h4>Note Google</h4><p>128 avis vérifiés de nos clients</p></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">7j/7</div>
+            <div class="stat-info"><h4>Ouverts pour vous</h4><p>Midi et soir, tous les jours</p></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">100%</div>
+            <div class="stat-info"><h4>Fait maison</h4><p>Marinades, sauces et recettes artisanales</p></div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- INFOS -->
-    <section class="infos">
-        <div class="infos-container">
-            <div class="info-card">
-                <div class="info-icon">📍</div>
-                <h3>Localisation</h3>
-                <p>86 Bd Paul Vaillant Couturier</p>
-                <p>94200 Ivry-sur-Seine</p>
-                <a href="https://www.google.com/maps/search/Meister+Berliner+Kebap+Ivry+sur+Seine" target="_blank" class="info-link">Voir sur Google Maps</a>
-            </div>
-            <div class="info-card">
-                <div class="info-icon">📞</div>
-                <h3>Téléphone</h3>
-                <p>Nous sommes à votre écoute</p>
-                <a href="tel:+33773435405" class="info-link">+33 7 73 43 54 05</a>
-            </div>
-            <div class="info-card">
-                <div class="info-icon">🕐</div>
-                <h3>Horaires</h3>
-                <p>Tous les jours de 11h à 23h</p>
-                <p style="font-size: 0.9rem; opacity: 0.8;">Dimanche: 12h à 22h</p>
-            </div>
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+  <div class="section-inner">
+    <div class="contact-layout">
+      <div>
+        <div class="reveal">
+          <div class="eyebrow">Nous rejoindre</div>
+          <h2 class="s-title">Venez nous<br><em>rendre visite</em></h2>
+          <p class="s-desc" style="margin-top:1rem">Commandez sur place, emportez ou faites-vous livrer — on est là.</p>
         </div>
-    </section>
-
-    <!-- MENU -->
-    <section class="menu">
-        <h2 class="section-title">Notre Menu</h2>
-        <div class="menu-categories">
-            <!-- Catégorie 1: Entrées -->
-            <div class="menu-category">
-                <h3>🥘 Entrées & Mezze</h3>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Houmous</span>
-                        <span class="menu-item-price">5,50 €</span>
-                    </div>
-                    <div class="menu-item-description">Pois chiches écrasés à la purée de sésame</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Baba Ganoush</span>
-                        <span class="menu-item-price">6,00 €</span>
-                    </div>
-                    <div class="menu-item-description">Aubergines grillées et crème de sésame</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Salade Grecque</span>
-                        <span class="menu-item-price">7,00 €</span>
-                    </div>
-                    <div class="menu-item-description">Tomates, concombre, feta et olives noires</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Börek (3 pièces)</span>
-                        <span class="menu-item-price">8,50 €</span>
-                    </div>
-                    <div class="menu-item-description">Feuilleté croustillant au fromage ou viande</div>
-                </div>
-            </div>
-
-            <!-- Catégorie 2: Kebaps -->
-            <div class="menu-category">
-                <h3>🍖 Kebaps & Grillades</h3>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Kebap Poulet</span>
-                        <span class="menu-item-price">9,50 €</span>
-                    </div>
-                    <div class="menu-item-description">Poulet rôti mariné, salade et sauce</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Kebap Viande</span>
-                        <span class="menu-item-price">10,50 €</span>
-                    </div>
-                    <div class="menu-item-description">Agneau et boeuf, saveurs authentiques</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Kebap Mixte</span>
-                        <span class="menu-item-price">11,50 €</span>
-                    </div>
-                    <div class="menu-item-description">Poulet et viande rouge, le meilleur des deux</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Adana Kebap</span>
-                        <span class="menu-item-price">12,00 €</span>
-                    </div>
-                    <div class="menu-item-description">Viande hachée épicée grillée à la main</div>
-                </div>
-            </div>
-
-            <!-- Catégorie 3: Sandwichs & Wraps -->
-            <div class="menu-category">
-                <h3>🌯 Sandwichs & Wraps</h3>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Dürüm Poulet</span>
-                        <span class="menu-item-price">8,00 €</span>
-                    </div>
-                    <div class="menu-item-description">Galette croustillante, poulet, légumes frais</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Dürüm Viande</span>
-                        <span class="menu-item-price">9,00 €</span>
-                    </div>
-                    <div class="menu-item-description">Galette garnie de viande rouge grillée</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Pain Pide Fromage</span>
-                        <span class="menu-item-price">7,50 €</span>
-                    </div>
-                    <div class="menu-item-description">Pain turc traditionnel garni de fromage fondant</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Pain Pide Viande</span>
-                        <span class="menu-item-price">8,50 €</span>
-                    </div>
-                    <div class="menu-item-description">Pain délicieux avec viande hachée épicée</div>
-                </div>
-            </div>
-
-            <!-- Catégorie 4: Accompagnements -->
-            <div class="menu-category">
-                <h3>🥗 Accompagnements</h3>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Frites</span>
-                        <span class="menu-item-price">3,50 €</span>
-                    </div>
-                    <div class="menu-item-description">Frites croustillantes et dorées</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Riz Pilaf</span>
-                        <span class="menu-item-price">4,00 €</span>
-                    </div>
-                    <div class="menu-item-description">Riz long grain cuit à la perfection</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Salade Fraîche</span>
-                        <span class="menu-item-price">4,50 €</span>
-                    </div>
-                    <div class="menu-item-description">Laitue, tomate, concombre, oignon</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Sauce Maison (pot)</span>
-                        <span class="menu-item-price">2,00 €</span>
-                    </div>
-                    <div class="menu-item-description">Yaourt épicé savoureux et authentique</div>
-                </div>
-            </div>
-
-            <!-- Catégorie 5: Boissons -->
-            <div class="menu-category">
-                <h3>🥤 Boissons</h3>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Eau (33cl)</span>
-                        <span class="menu-item-price">1,50 €</span>
-                    </div>
-                    <div class="menu-item-description">Eau plate ou pétillante</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Soda (33cl)</span>
-                        <span class="menu-item-price">2,50 €</span>
-                    </div>
-                    <div class="menu-item-description">Coca, Fanta, Sprite et plus</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Ayran</span>
-                        <span class="menu-item-price">3,00 €</span>
-                    </div>
-                    <div class="menu-item-description">Boisson turque traditionnelle au yaourt</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Jus Frais</span>
-                        <span class="menu-item-price">4,00 €</span>
-                    </div>
-                    <div class="menu-item-description">Orange, citron ou pomme frais pressé</div>
-                </div>
-            </div>
-
-            <!-- Catégorie 6: Desserts -->
-            <div class="menu-category">
-                <h3>🍰 Desserts</h3>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Baklava</span>
-                        <span class="menu-item-price">6,50 €</span>
-                    </div>
-                    <div class="menu-item-description">Feuilleté aux pistaches et miel sucré</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Kunafa</span>
-                        <span class="menu-item-price">6,00 €</span>
-                    </div>
-                    <div class="menu-item-description">Crème et pistaches caramélisées</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Pâtisseries Turques</span>
-                        <span class="menu-item-price">5,00 €</span>
-                    </div>
-                    <div class="menu-item-description">Sélection de délices sucrés traditionnels</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-name">
-                        <span>Halva</span>
-                        <span class="menu-item-price">4,50 €</span>
-                    </div>
-                    <div class="menu-item-description">Pâte sésame sucrée, texture fondante</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="about">
-        <div class="about-container">
-            <h2>À Propos de Nous</h2>
-            <p>
-                Bienvenue chez <span class="about-highlight">Meister Berliner Kebap</span>, votre restaurant de cuisine turque authentique à Ivry-sur-Seine depuis plusieurs années.
-            </p>
-            <p>
-                Nous nous engageons à vous servir les meilleures saveurs turques avec des <span class="about-highlight">ingrédients frais et de qualité</span>. Nos kebaps sont marinés et grillés avec passion, suivant les traditions culinaires d'Anatolie.
-            </p>
-            <p>
-                Que vous cherchiez un kebap savoureux pour le déjeuner, un dîner en famille ou une livraison à domicile, notre équipe dynamique est là pour vous offrir une <span class="about-highlight">expérience culinaire inoubliable</span>.
-            </p>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-        <h2 class="section-title">Nous Contacter</h2>
-        <div class="contact-container">
+        <div class="contact-items">
+          <div class="contact-item reveal reveal-delay-1">
+            <div class="contact-ico">📍</div>
             <div class="contact-info">
-                <h3>Coordonnées</h3>
-                <div class="contact-detail">
-                    <strong>Adresse:</strong>
-                    <div>
-                        86 Bd Paul Vaillant Couturier<br>
-                        94200 Ivry-sur-Seine, France
-                    </div>
-                </div>
-                <div class="contact-detail">
-                    <strong>Téléphone:</strong>
-                    <div>
-                        <a href="tel:+33773435405">+33 7 73 43 54 05</a>
-                    </div>
-                </div>
-                <div class="contact-detail">
-                    <strong>Horaires:</strong>
-                    <div>
-                        Lun-Sam: 11h - 23h<br>
-                        Dimanche: 12h - 22h
-                    </div>
-                </div>
-                <div class="contact-detail">
-                    <strong>Services:</strong>
-                    <div>
-                        Sur place • À emporter • Livraison
-                    </div>
-                </div>
-                <div style="margin-top: 
+              <h4>Adresse</h4>
+              <p>86 Bd Paul Vaillant Couturier, 94200 Ivry-sur-Seine</p>
+            </div>
+          </div>
+          <div class="contact-item reveal reveal-delay-2">
+            <div class="contact-ico">📞</div>
+            <div class="contact-info">
+              <h4>Téléphone</h4>
+              <a href="tel:+33773435405">+33 7 73 43 54 05</a>
+            </div>
+          </div>
+          <div class="contact-item reveal reveal-delay-3">
+            <div class="contact-ico">🕐</div>
+            <div class="contact-info">
+              <h4>Horaires</h4>
+              <p>Lun – Sam : 11h00 – 23h00<br>Dimanche : 12h00 – 22h00</p>
+            </div>
+          </div>
+          <div class="contact-item reveal">
+            <div class="contact-ico">🛵</div>
+            <div class="contact-info">
+              <h4>Services</h4>
+              <p>Sur place · À emporter · Livraison</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-cta reveal">
+          <a href="tel:+33773435405" class="btn btn-red">📞 Appeler maintenant</a>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="contact-map">
+          <iframe
+            src="https://maps.google.com/maps?q=86+Bd+Paul+Vaillant+Couturier,+94200+Ivry-sur-Seine,+France&output=embed&z=16"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Meister Berliner Kebap sur Google Maps">
+          </iframe>
+          <div class="contact-map-overlay"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Meister <em>Berliner</em> Kebap</div>
+    <div class="footer-info">86 Bd Paul Vaillant Couturier · 94200 Ivry-sur-Seine · +33 7 73 43 54 05</div>
+    <div class="footer-info">© 2025 Meister Berliner Kebap — Tous droits réservés</div>
+  </div>
+</footer>
+
+<script>
+  /* Cursor */
+  const cursor = document.getElementById('cursor');
+  let mx = -100, my = -100;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  (function loop() { cursor.style.left = mx+'px'; cursor.style.top = my+'px'; requestAnimationFrame(loop); })();
+  document.querySelectorAll('a,button,.menu-item,.stat-card,.info-card').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('grow'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
+  });
+
+  /* Header scroll */
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 60));
+
+  /* Nav toggle */
+  const navToggle = document.getElementById('nav-toggle');
+  const mainNav = document.getElementById('main-nav');
+  navToggle.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('open');
+    navToggle.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  // Close nav when a link is clicked
+  mainNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+      navToggle.classList.remove('open');
+    });
+  });
+
+  /* Scroll reveal */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(r => io.observe(r));
+
+  /* Menu filter */
+  document.querySelectorAll('.menu-cat').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.menu-cat').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.dataset.cat;
+      document.querySelectorAll('.menu-category').forEach(sec => {
+        sec.style.display = (cat === 'all' || sec.dataset.section === cat) ? '' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>
